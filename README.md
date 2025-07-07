@@ -1,71 +1,122 @@
-# Getting Started with Create React App
+# 🚖 RideWise – Fare Comparison & Ride Booking App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+RideWise is a **MERN-based prototype** that allows users to **compare ride fares** (Uber, Ola, Rapido) and **simulate ride booking**. This README covers:
 
-## Available Scripts
+- ✅ **Phase 1:** Route Map & ETA Visualization  
+- ✅ **Phase 2:** Ride Booking Simulation  
+- 🚧 **Coming Soon:** Phase 2.5 - Fare Comparison & Recommendation
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🚀 Project Setup Instructions
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### ✅ Prerequisites
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Node.js & npm installed
+- Google Maps API key with the following APIs enabled:
+  - **Maps JavaScript API**
+  - **Directions API**
+  - **Places API**
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🧱 Installation & Setup
 
-### `npm run build`
+```bash
+# 1. Clone the repo
+git clone https://github.com/your-username/ridewise.git
+cd ridewise
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# 2. Install dependencies
+npm install
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# 3. Set up environment variable
+# Create a `.env` file and add your API key:
+echo "REACT_APP_GOOGLE_MAPS_API_KEY=YOUR_GOOGLE_MAPS_API_KEY" > .env
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# 4. Start the development server
+npm start
+```
 
-### `npm run eject`
+ Tech Stack
+Feature	Library/Tool
+Frontend	React.js
+Styling	Tailwind CSS
+Maps & Directions	@react-google-maps/api
+State Management	React Hooks
+API Key Management	.env file
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+✅ Phase 1: Route Map & ETA Visualization
+🎯 Objective
+Show Google Map
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Accept pickup and drop locations
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Draw polyline route
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Display ETA and distance
 
-## Learn More
+⚙️ Key Commands
+bash
+Copy
+Edit
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+npm install @react-google-maps/api
+🧩 Tailwind Setup
+tailwind.config.js
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+js
+Copy
+Edit
+content: ['./src/**/*.{html,js,jsx,ts,tsx}'],
+postcss.config.js
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+js
+Copy
+Edit
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+};
+src/index.css
 
-### Code Splitting
+css
+Copy
+Edit
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+✅ Phase 2: Ride Booking Simulation
+🎯 Objective
+Book a ride after route is shown
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Simulate ride status changes:
 
-### Analyzing the Bundle Size
+"Requested" → "Driver Assigned" → "On Ride" → "Completed"
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+🧠 Logic Used
+useState() to manage ride status
 
-### Making a Progressive Web App
+setTimeout() to simulate ride progress
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Button is disabled after booking starts
 
-### Advanced Configuration
+🖱 Status Timeline
+Status	Time After Click
+Requested	Immediately
+Driver Assigned	+2 seconds
+On Ride	+5 seconds
+Completed	+10 seconds
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+✅ Coming Up: Phase 2.5 – Fare Comparison & Recommendation
+🎯 Objective
+Compare ride providers (Uber, Ola, Rapido) with mock fare data
 
-### Deployment
+Display all fare options
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Recommend the best provider based on price
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-"# RideWise-Phase1-2" 
+Allow ride booking with the selected provider
