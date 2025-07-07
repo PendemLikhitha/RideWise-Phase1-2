@@ -38,85 +38,98 @@ echo "REACT_APP_GOOGLE_MAPS_API_KEY=YOUR_GOOGLE_MAPS_API_KEY" > .env
 npm start
 ```
 
- Tech Stack
-Feature	Library/Tool
-Frontend	React.js
-Styling	Tailwind CSS
-Maps & Directions	@react-google-maps/api
-State Management	React Hooks
-API Key Management	.env file
+## 📦 Tech Stack
 
-✅ Phase 1: Route Map & ETA Visualization
-🎯 Objective
-Show Google Map
+| Feature              | Library/Tool              |
+|----------------------|---------------------------|
+| Frontend             | React.js                  |
+| Styling              | Tailwind CSS              |
+| Maps & Directions    | @react-google-maps/api    |
+| State Management     | React Hooks               |
+| API Key Management   | `.env` file               |
 
-Accept pickup and drop locations
+---
+## ✅ Phase 1: Route Map & ETA Visualization
 
-Draw polyline route
+### 🎯 Objective
 
-Display ETA and distance
+- Show Google Map  
+- Accept **pickup** and **drop** locations  
+- Draw **polyline route**  
+- Display **ETA** and **distance**
 
-⚙️ Key Commands
-bash
-Copy
-Edit
+---
+
+### ⚙️ Key Commands
+
+```bash
 npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
 npm install @react-google-maps/api
-🧩 Tailwind Setup
-tailwind.config.js
+```
 
-js
-Copy
-Edit
+### Tailwind Setup
+## tailwind.config.js
+```bash
 content: ['./src/**/*.{html,js,jsx,ts,tsx}'],
-postcss.config.js
+```
 
-js
-Copy
-Edit
+## postcss.config.js
+```bash
 module.exports = {
   plugins: {
     tailwindcss: {},
     autoprefixer: {},
   },
 };
-src/index.css
-
-css
-Copy
-Edit
+```
+## src/index.css
+```bash
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-✅ Phase 2: Ride Booking Simulation
-🎯 Objective
-Book a ride after route is shown
+```
+---
+## ✅ Phase 2: Ride Booking Simulation
+### 🎯 Objective
+- Book a ride after route is shown
+- Simulate ride status changes:
+## "Requested" → "Driver Assigned" → "On Ride" → "Completed"
 
-Simulate ride status changes:
+## ✅ Phase 2: Ride Booking Simulation
 
-"Requested" → "Driver Assigned" → "On Ride" → "Completed"
+### 🎯 Objective
 
-🧠 Logic Used
-useState() to manage ride status
+- Book a ride after the route is shown  
+- Simulate ride status changes:  
+  **"Requested" → "Driver Assigned" → "On Ride" → "Completed"**
 
-setTimeout() to simulate ride progress
+---
 
-Button is disabled after booking starts
+### 🧠 Logic Used
 
-🖱 Status Timeline
-Status	Time After Click
-Requested	Immediately
-Driver Assigned	+2 seconds
-On Ride	+5 seconds
-Completed	+10 seconds
+- `useState()` to manage ride status  
+- `setTimeout()` to simulate ride progress  
+- Booking button is **disabled** after booking starts
 
-✅ Coming Up: Phase 2.5 – Fare Comparison & Recommendation
-🎯 Objective
-Compare ride providers (Uber, Ola, Rapido) with mock fare data
+---
 
-Display all fare options
+### 🖱 Status Timeline
 
-Recommend the best provider based on price
+| Status           | Time After Click |
+|------------------|------------------|
+| Requested        | Immediately      |
+| Driver Assigned  | +2 seconds       |
+| On Ride          | +5 seconds       |
+| Completed        | +10 seconds      |
 
-Allow ride booking with the selected provider
+---
+
+## ✅ Coming Up: Phase 2.5 – Fare Comparison & Recommendation
+
+### 🎯 Objective
+
+- Compare ride providers (Uber, Ola, Rapido) using **mock fare data**  
+- Display all available fare options  
+- **Recommend** the best provider based on lowest price  
+- Allow ride booking with the selected provider  
